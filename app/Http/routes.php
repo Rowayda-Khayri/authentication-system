@@ -12,10 +12,10 @@
 */
 
 
-
-Route::get('/', ['middleware' => 'auth', function ()  {
-    return view('welcome');
-}]);
+//
+//Route::get('/', ['middleware' => 'auth', function ()  {
+//    return view('welcome');
+//}]);
 
 
 //Route::get('api/user', ['middleware' => 'auth.basic', function() {
@@ -43,7 +43,7 @@ Route::get('/', ['middleware' => 'auth', function ()  {
 
 
 
-/********************************************************************
+/********************************************************************/
 
 Route::group(['middleware' => ['web']], function () {
 
@@ -52,7 +52,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('/home', 'HomeController@index');
 Route::get('/test', 'Controller@test');
 
 
@@ -103,8 +103,5 @@ Route::resource('users', 'UserController');
 //$this->post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
 //$this->post('password/reset', 'Auth\PasswordController@reset');
 //
-Route::get('/home', 'HomeController@index')->middleware('auth.basic');
- * 
- * 
- * 
- */
+//Route::get('/home', 'HomeController@index')->middleware('auth.basic');
+ 
