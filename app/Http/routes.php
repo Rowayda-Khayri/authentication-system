@@ -12,6 +12,39 @@
 */
 
 
+
+Route::get('/', ['middleware' => 'auth', function ()  {
+    return view('welcome');
+}]);
+
+
+//Route::get('api/user', ['middleware' => 'auth.basic', function() {
+//    // Only authenticated users may enter...
+//    
+//    
+//    Route::get('/home', 'HomeController@index');
+//
+//    
+//    
+//    
+//    
+//}]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********************************************************************
+
 Route::group(['middleware' => ['web']], function () {
 
 
@@ -71,3 +104,7 @@ Route::resource('users', 'UserController');
 //$this->post('password/reset', 'Auth\PasswordController@reset');
 //
 Route::get('/home', 'HomeController@index')->middleware('auth.basic');
+ * 
+ * 
+ * 
+ */
