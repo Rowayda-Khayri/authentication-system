@@ -23,10 +23,31 @@ Route::get('/', function () {
 Route::get('/test', 'Controller@test');
 
 
+//Route::get('names', function()
+//{
+//    return array(
+//      1 => "John",
+//      2 => "Mary",
+//      3 => "Steven"
+//    );
+//});
+//
+//
+//Route::get('names/{id}', function($id)
+//{
+//    $names = array(
+//      1 => "John",
+//      2 => "Mary",
+//      3 => "Steven"
+//    );    
+//    return array($id => $names[$id]);
+//});
 
 
+Route::resource('users', 'UserController');
 
-
+////Auth routes 
+//Route::resource('names', array('before' => 'basic.once'), 'NameController');
 
 
 
