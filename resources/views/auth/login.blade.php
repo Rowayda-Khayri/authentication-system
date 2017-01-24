@@ -30,6 +30,7 @@
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="password">
 
+                                
                                 @if ($errors->has('password'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
@@ -43,7 +44,7 @@
                                 <div class="checkbox">
                                     <label>
                                         <input type="checkbox" name="remember"> Remember Me
-                                    </label>
+                                         </label>
                                 </div>
                             </div>
                         </div>

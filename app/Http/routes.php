@@ -11,38 +11,6 @@
 |
 */
 
-
-//
-//Route::get('/', ['middleware' => 'auth', function ()  {
-//    return view('welcome');
-//}]);
-
-
-//Route::get('api/user', ['middleware' => 'auth.basic', function() {
-//    // Only authenticated users may enter...
-//    
-//    
-//    Route::get('/home', 'HomeController@index');
-//
-//    
-//    
-//    
-//    
-//}]);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /********************************************************************/
 
 Route::group(['middleware' => ['web']], function () {
@@ -52,9 +20,34 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', 'HomeController@index');
-Route::get('/test', 'Controller@test');
 
+
+
+//Route::auth();
+
+// Authentication Routes...
+$this->get('login', 'Auth\AuthController@showLoginForm');
+$this->post('login', 'Auth\AuthController@login');
+$this->get('logout', 'Auth\AuthController@logout');
+// Registration Routes...
+$this->get('register', 'Auth\AuthController@showRegistrationForm');
+$this->post('register', 'Auth\AuthController@register');
+// Password Reset Routes...
+$this->get('password/reset/{token?}', 'Auth\PasswordController@showResetForm');
+$this->post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
+$this->post('password/reset', 'Auth\PasswordController@reset');
+
+
+Route::get('/home', 'HomeController@index');
+
+
+//Route::get('/home', 'HomeController@index')->middleware('auth.basic');
+ 
+});
+
+/************************************************************/
+
+//Route::get('/test', 'Controller@test');
 
 //Route::get('names', function()
 //{
@@ -84,24 +77,23 @@ Route::resource('users', 'UserController');
 
 
 
-
-
-});
-
-
-////Route::auth();
 //
-//// Authentication Routes...
-//$this->get('login', 'Auth\AuthController@showLoginForm');
-//$this->post('login', 'Auth\AuthController@login');
-//$this->get('logout', 'Auth\AuthController@logout');
-//// Registration Routes...
-//$this->get('register', 'Auth\AuthController@showRegistrationForm');
-//$this->post('register', 'Auth\AuthController@register');
-//// Password Reset Routes...
-//$this->get('password/reset/{token?}', 'Auth\PasswordController@showResetForm');
-//$this->post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
-//$this->post('password/reset', 'Auth\PasswordController@reset');
+//Route::get('/', ['middleware' => 'auth', function ()  {
+//    return view('welcome');
+//}]);
+
+
+//Route::get('api/user', ['middleware' => 'auth.basic', function() {
+//    // Only authenticated users may enter...
+//    
+//    
+//    Route::get('/home', 'HomeController@index');
 //
-//Route::get('/home', 'HomeController@index')->middleware('auth.basic');
- 
+//    
+//    
+//    
+//    
+//}]);
+
+
+
