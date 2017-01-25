@@ -26,7 +26,9 @@ Route::get('/', function () {
 //Route::auth();
 
 // Authentication Routes...
-$this->get('login', 'Auth\AuthController@showLoginForm');
+//$this->get('login', 'Auth\AuthController@showLoginForm');
+$this->get('login', 'Auth\AuthController@waitForLogin');
+
 $this->post('login', 'Auth\AuthController@login');
 $this->get('logout', 'Auth\AuthController@logout');
 // Registration Routes...
