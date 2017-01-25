@@ -20,7 +20,6 @@ Route::group(['middleware' => ['web']], function () {
 //    return view('welcome');
 //});
 
-$this->get('/', 'Auth\AuthController@waitForLogin');
 
 
 
@@ -28,9 +27,12 @@ $this->get('/', 'Auth\AuthController@waitForLogin');
 
 // Authentication Routes...
 //$this->get('login', 'Auth\AuthController@showLoginForm');
-$this->get('login', 'Auth\AuthController@waitForLogin');
+//$this->get('login', 'Auth\AuthController@waitForLogin');
+    Route::get('login', 'Auth\AuthController@waitForLogin');
+    Route::get('/', 'Auth\AuthController@waitForLogin');
 
-$this->post('login', 'Auth\AuthController@login');
+
+    $this->post('login', 'Auth\AuthController@login');
 $this->get('logout', 'Auth\AuthController@logout');
 // Registration Routes...
 $this->get('register', 'Auth\AuthController@showRegistrationForm');
