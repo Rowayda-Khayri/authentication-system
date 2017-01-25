@@ -26,6 +26,7 @@ class HomeController extends Controller
         
         $user = Auth::user();
         
-        return "Welcome $user->name, U R Logged In";
+        return json_encode("Welcome $user->name, U R Logged In");
+//        return "Welcome $user->name, U R Logged In";
     }
 }
