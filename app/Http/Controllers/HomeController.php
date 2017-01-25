@@ -21,6 +21,6 @@ class HomeController extends Controller
     public function index()
     {
 //        return view('home');
-        return "Welcome";
+        return "Welcome, U R Logged In";
     }
 }
