@@ -83,7 +83,9 @@ trait AuthenticatesUsers
             $this->incrementLoginAttempts($request);
         }
 
-        return $this->sendFailedLoginResponse($request);
+        //return json_encode($this->sendFailedLoginResponse($request));
+        
+        return json_encode("login error");
     }
 
     /**
